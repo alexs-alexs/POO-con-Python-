@@ -1,0 +1,28 @@
+CREATE TABLE estudiantes(
+id_estudiantes INTEGER PRIMARY KEY,
+nombre TEXT,
+apellido TEXT,
+grado TEXT
+);
+
+CREATE TABLE asistencia(
+id_asistencia INTEGER PRIMARY KEY AUTOINCREMENT,
+id_estudiante INTEGER,
+fecha DATE,
+estado TEXT,
+FOREIGN KEY (id_estudiante) REFERENCES estudiantes(id_estudiantes)
+);
+
+
+CREATE TABLE profesor(
+id_profesor INTEGER PRIMARY KEY AUTOINCREMENT,
+nombre_usuario TEXT UNIQUE,
+contrasena TEXT
+);
+
+
+INSERT INTO estudiantes (id_estudiantes,nombre, apellido, grado) VALUES
+(1001,'Juan', 'Pérez', '5to'),
+(1002,'María', 'García', '6to'),
+(1003,'Carlos', 'López', '7mo'),
+(1004,'Ana', 'Martínez', '8vo');
